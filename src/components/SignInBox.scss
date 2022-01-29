@@ -1,0 +1,45 @@
+@use "../App" as v;
+
+#centerer{
+    display: flex;
+    justify-content: center;
+}
+#signin-box{
+    text-align: center;
+    border:none;
+    background-color: v.$reg_green;
+    border-radius: 1rem;
+    margin:3rem 0 0 3rem;
+    padding:3rem;
+    color:v.$white;
+    font-size: 2rem;
+}
+.form-control{
+    padding-bottom: 2rem;
+}
+.signin-text-label{
+    float:bottom;
+    //display: inline;
+}
+.signin-text-input{
+    width:20rem;
+    height: 3rem;
+    border-radius:0.5rem;
+    float:right;
+}
+#signin-btn{
+    display:block;
+    border:none;
+    border-radius:1rem;
+    padding-top:0.25rem;
+    padding-bottom:0.5rem;
+    width:13rem;
+    font-size:2rem;
+    color:v.$dark_green;
+    margin:auto;
+    background-color:v.$white;
+    margin-top:1rem;
+}
+#signin-label{
+    padding-bottom:3rem;
+}
