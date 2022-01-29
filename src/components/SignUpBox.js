@@ -4,6 +4,8 @@ import {createUserWithEmailAndPassword} from 'firebase/auth';
 import {collection, addDoc } from 'firebase/firestore';
 import { useDispatch } from "react-redux";
 import {userActions} from '../store/user-context';
+import './SignUpBox.scss';
+
 function SignUpBox() {
   const dispatch = useDispatch();
   const emailRef = useRef();
@@ -36,22 +38,29 @@ function SignUpBox() {
       alert(err.message);
     }
   }
-  return <div>
-      <div className="container">
+  return <div id="centerer">
+      <div className="container" id="signup-box">
         <form onSubmit={addNewUser}>
+
+          <label id="signup-label"><u>Sign Up</u></label>
+
           <div className="form-control">
-            <label htmlFor="name">Name</label>
-            <input type="text" id="name" ref={nameRef} />
+            <label htmlFor="name" className="signup-text-label">Name : </label>
+            <input type="text" id="name" ref={nameRef} className='signup-text-input'/>
           </div>
+
           <div className="form-control">
-            <label htmlFor="email">Email</label>
-            <input type="email" id="email" ref={emailRef} />
+            <label htmlFor="email" className="signup-text-label">Email : </label>
+            <input type="email" id="email" ref={emailRef}  className='signup-text-input'/>
           </div>
+
           <div className="form-control">
-            <label htmlFor="password">Password</label>
-            <input type="password" id="password" ref={passwordRef}/>
+            <label htmlFor="password" className="signup-text-label">Password : </label>
+            <input type="password" id="password" ref={passwordRef} className='signup-text-input'/>
           </div>
-          <button type="submit">Sign Up</button>
+
+          <button type="submit" id="signup-button">Sign Up</button>
+
         </form>
       </div>
   </div>;
