@@ -3,10 +3,11 @@
 #footer{
     background-color: v.$dark_green;
     position:absolute;
-   bottom:0;
+   bottom:-20rem;
    width:100%;
    height:15rem;
    text-align: center;
+   overflow:auto;
 }
 #name{
     margin-top:3rem;
