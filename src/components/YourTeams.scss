@@ -1,0 +1,46 @@
+@use "../App" as v;
+
+#create-team-btn{
+    background-color: v.$reg_green;
+    margin: 3rem;
+    font-size:2rem;
+    border:none;
+    border-radius:1rem;
+    padding:1rem;
+    color:v.$white;
+}
+#your-teams-heading{
+    margin:3rem;
+    margin-top:1rem;
+    color:v.$dark_green;
+    font-size:3rem;
+}
+#teams-table-container{
+    margin:3rem;
+    display:flex;
+
+}
+.teams-table-col{
+    margin:0.5rem 2rem 0.5rem 0;
+    padding:0 1rem 0 0;
+}
+#team-name-list{
+    margin-right:20em;
+}
+.teams-table-heading{
+    color:v.$dark_green;
+    font-size:2rem;
+}
+#position-list{
+    margin-right:7em;
+}
+.teams-table-elements{
+    list-style-type: none;
+    font-size:1.5rem;
+    color:v.$dark_green;
+    padding-top:1rem;
+}
+#plus-button{
+    height:10rem;
+    
+}
