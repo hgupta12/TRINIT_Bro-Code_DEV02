@@ -1,10 +1,17 @@
-import React from 'react';
+import React,{useState} from 'react';
+import CreateTeamModal from './CreateTeamModal';
+import JoinTeamModal from './JoinTeamModal';
 import './YourTeams.scss';
 
 function YourTeams() {
-  return <div>
-      <button id="create-team-btn">Create Team</button>
+    const [isOpenCreate, setIsOpenCreate] = useState(false);
+    const [isOpenJoin, setIsOpenJoin] = useState(false);
 
+  return <div>
+      <button id="create-team-btn" onClick={()=>setIsOpenCreate(true)}>Create Team</button>
+      <button id="create-team-btn" onClick={()=>setIsOpenJoin(true)}>Join Team</button>
+        <CreateTeamModal isOpen={isOpenCreate} setIsOpen={setIsOpenCreate}/>
+        <JoinTeamModal isOpen={isOpenJoin} setIsOpen={setIsOpenJoin}/>
       <h2 id="your-teams-heading"><u>Your teams:</u></h2>
 
       <div id="teams-table-container">

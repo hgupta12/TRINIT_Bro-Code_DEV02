@@ -5,19 +5,16 @@ import Modal from './Modal';
 import './CreateTeamModal.scss';
 import { useDispatch ,useSelector } from 'react-redux';
 import { userActions } from '../store/user-context';
-import { auth } from "../firebase-config";
 
 
-const CreateTeamModal = () => {
+const CreateTeamModal = ({isOpen,setIsOpen}) => {
     const dispatch = useDispatch();
 
     const userCtx = useSelector(state=> state.user);
 
     const nameRef = useRef();
     const descRef = useRef();
-    const [isOpen, setIsOpen] = useState(true);
     const [inviteId,setInviteId] = useState(null);
-
     const closeModal = ()=>{
         setIsOpen(false);
     }
@@ -44,6 +41,18 @@ const CreateTeamModal = () => {
 
     if(!isOpen)
         return null
+    if(inviteId){
+        return (
+            <Modal heading="Team created!" closeModal={closeModal}>
+                <div className="passcode-container">
+                    <h2>Manager Code:</h2>
+                    <p>{`${inviteId}M`}</p>
+                    <h2>Employee Code:</h2>
+                    <p>{`${inviteId}E`}</p>
+                </div>
+            </Modal>
+        )
+    }
   return (
   <Modal heading="New Team" closeModal={closeModal}>
       <form className='form' onSubmit={createTeam} >

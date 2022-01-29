@@ -5,8 +5,10 @@ import {collection, addDoc } from 'firebase/firestore';
 import { useDispatch } from "react-redux";
 import {userActions} from '../store/user-context';
 import './SignUpBox.scss';
+import {useNavigate} from 'react-router-dom';
 
 function SignUpBox() {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const emailRef = useRef();
   const passwordRef = useRef();
@@ -34,6 +36,7 @@ function SignUpBox() {
       nameRef.current.value = "";
       dispatch(userActions.addUser(userDetails))
       localStorage.setItem("user",JSON.stringify(userDetails));
+      navigate('/teams')
     }
     catch(err){
       alert(err.message);

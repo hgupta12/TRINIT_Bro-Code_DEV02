@@ -3,6 +3,11 @@ import { useDispatch } from 'react-redux';
 import './App.scss';
 import NavBar from './components/NavBar'
 import { userActions } from './store/user-context';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import SignUpBox from './components/SignUpBox';
+import SignInBox from './components/SignInBox';
+import HomePageContent from './components/HomePageContent';
+import YourTeams from './components/YourTeams';
 function App() {
   const dispatch = useDispatch();
 
@@ -11,9 +16,15 @@ function App() {
       dispatch(userActions.addUser(JSON.parse(localStorage.getItem("user"))));
   },[])
   return (
-    <div className="App">
+    <Router>
       <NavBar />
-    </div>
+      <Routes>
+        <Route path="/" element={<HomePageContent/>}/>
+        <Route path='/signup' element={<SignUpBox/>}/>
+        <Route path='/signin' element={<SignInBox/>}/>
+        <Route path='/teams' element={<YourTeams/>}/>
+      </Routes>
+    </Router>
   );
 }
 
