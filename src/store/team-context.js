@@ -1,6 +1,6 @@
 import {createSlice} from '@reduxjs/toolkit';
 
-const initalState = {
+const initialState = {
     name:"",
     members:{},
     creator:{},
