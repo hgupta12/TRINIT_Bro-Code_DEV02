@@ -29,8 +29,9 @@ function SignUpBox() {
         name,
       };
       await addDoc(usersRef,userDetails);
-        nameRef.current.value = "";
+      nameRef.current.value = "";
       dispatch(userActions.addUser(userDetails))
+      localStorage.setItem("user",JSON.stringify(userDetails));
     }
     catch(err){
       alert(err.message);

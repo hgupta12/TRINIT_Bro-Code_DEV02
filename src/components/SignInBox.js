@@ -32,7 +32,7 @@ function SignUpBox() {
         name: docSnap.docs[0].data().name
       }
       dispatch(userActions.addUser(userDetails));
-      alert(userDetails.name);
+      localStorage.setItem("user", JSON.stringify(userDetails));
     } catch (err) {
       alert(err.message);
     }
