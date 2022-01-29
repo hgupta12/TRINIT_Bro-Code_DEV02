@@ -15,9 +15,9 @@ const userSlice = createSlice({
     reducers:{
         addUser(state,action){
             // will recieve auth as payload
-            state.id = action.payload.currentUser.uid;
-            state.userName = action.payload.userName;
-            state.email = action.payload.currentUser.email;
+            state.id = action.payload.id;
+            state.userName = action.payload.name;
+            state.email = action.payload.email;
         }
     }
 })
