@@ -3,12 +3,12 @@
 .NavBar{
     overflow:hidden;
 }
-ul {
+#navbar-list {
     list-style-type: none;
     overflow: hidden;
     background-color: v.$dark_green;
 }
-li {
+.navbar-list-element {
     display:inline;
     color: v.$light_green;
     float: left;
