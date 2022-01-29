@@ -1,0 +1,37 @@
+@use "../App" as v;
+
+#centerer{
+    display:flex;
+    justify-content: center;
+    margin-top:3rem;
+}
+
+#remove-participants-container{
+    display:flex;
+    flex-direction: row;
+    background-color: v.$reg_green;
+    padding:5rem;
+    border-radius: 2rem;
+    
+}
+#remove-participants-text{
+    color:v.$white;
+    margin-right:1rem;
+}
+#remove-participants-input{
+    border-radius: 0.5rem;
+    width:20rem;
+    border:none;
+}
+#remove-participants-button{
+    display:block;
+    border:none;
+    border-radius:2rem;
+    padding-top:0.25rem;
+    padding-bottom:0.5rem;
+    width:13rem;
+    font-size:2rem;
+    color:v.$dark_green;
+    margin-top:2rem;
+    
+}
