@@ -1,0 +1,66 @@
+@use "../App" as v;
+
+#centerer{
+    display: flex;
+    justify-content: center;
+}
+#signup-label{
+    font-size:3rem;
+}
+#signup-box{
+    text-align: center;
+    border:none;
+    background-color: v.$reg_green;
+    border-radius: 1rem;
+    margin:3rem 0 0 3rem;
+    padding:3rem;
+    color:v.$white;
+    font-size: 2rem;
+}
+.form-control{
+    //display: inline;
+    padding-bottom:1rem;
+
+}
+.signup-text-input{
+    width:20rem;
+    height: 3rem;
+    border-radius:0.5rem;
+    float:none;
+    
+}
+.signup-text-label{
+    float:bottom;
+    display: inline;
+}
+/*
+.signup-text-input{
+    width:20rem;
+    height: 3rem;
+    border-radius:0.5rem;
+}
+.signup-text-label{
+    width:15rem;
+    height:3rem;
+    font-size:2.5rem;
+}
+.form-control{
+    padding:1rem;
+    margin:1rem;
+    margin-bottom:0;
+    display:flex;
+    flex-direction: row;
+}*/
+#signup-button{
+    display:block;
+    border:none;
+    border-radius:1rem;
+    padding-top:0.25rem;
+    padding-bottom:0.5rem;
+    width:13rem;
+    font-size:2rem;
+    color:v.$dark_green;
+    margin:auto;
+    background-color:v.$white;
+    margin-top:1rem;
+}

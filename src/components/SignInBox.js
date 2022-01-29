@@ -4,6 +4,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { getDocs, collection, query ,where} from "firebase/firestore";
 import { useDispatch } from "react-redux";
 import { userActions } from "../store/user-context";
+import "./SignInBox.scss";
 function SignUpBox() {
   const dispatch = useDispatch();
   const emailRef = useRef();
@@ -38,18 +39,23 @@ function SignUpBox() {
     }
   };
   return (
-    <div>
-      <div className="container">
+    <div id="centerer">
+      <div className="container" id="signin-box">
         <form onSubmit={addNewUser}>
+          <h2 id="signin-label"><u>Sign In</u></h2>
+
           <div className="form-control">
-            <label htmlFor="email">Email</label>
-            <input type="email" id="email" ref={emailRef} />
+            <label htmlFor="email" className="signin-text-label">Email: </label>
+            <input type="email" id="email" ref={emailRef}  className='signin-text-input'/>
           </div>
+
           <div className="form-control">
-            <label htmlFor="password">Password</label>
-            <input type="password" id="password" ref={passwordRef} />
+            <label htmlFor="password" className="signin-text-label">Password: </label>
+            <input type="password" id="password" ref={passwordRef}  className='signin-text-input'/>
           </div>
-          <button type="submit">Sign In</button>
+
+          <button type="submit" id="signin-btn">Sign In</button>
+
         </form>
       </div>
     </div>
