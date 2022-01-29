@@ -1,11 +1,10 @@
-// import SignUpBox from "./components/SignUpBox";
-import SignInBox from "./components/SignInBox";
-
+import './App.scss';
+import NavBar from './components/NavBar'
 
 function App() {
   return (
     <div className="App">
-      <SignInBox/>
+      <NavBar />
 
     </div>
   );

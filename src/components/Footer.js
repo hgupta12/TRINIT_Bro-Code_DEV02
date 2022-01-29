@@ -1,8 +1,9 @@
 import React from 'react';
+import './Footer.scss';
 
 function Footer() {
-  return <div>
-      <h1>Grasshopper</h1>
+  return <div id="footer">
+      <h1 id="name">Grasshopper</h1>
   </div>;
 }
 
