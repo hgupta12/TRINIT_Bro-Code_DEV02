@@ -1,0 +1,33 @@
+@use '../App' as *;
+
+.form{
+    padding: 1rem;
+    &-control{
+        label{
+            display: block;
+            font-weight: bold;
+            color: $dark_green;
+            margin-bottom: 0.5rem;
+        }
+        input,textarea{
+            width: 100%;
+            padding: 0.2rem 0.5rem;
+            border: none;
+            margin-bottom: 1rem;
+        }
+        textarea{
+            height: 15vh;
+        }
+    }
+    button{
+        width: 50%;
+        padding: 0.5rem 0;
+        border: none;
+        border-radius: 50px;
+        background-color: $dark_green;
+        color: white;
+        margin-top: 1rem;
+        cursor: pointer;
+
+    }
+}

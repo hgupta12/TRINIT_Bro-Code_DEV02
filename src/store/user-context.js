@@ -1,10 +1,9 @@
 import {createSlice} from '@reduxjs/toolkit';
-
 const initialState ={
     id: null,
     userName: '',
     emailId:'',
-    teams:{},
+    teams:[],
     currentIssues:[],
     closedIssues:[]
 }
@@ -14,10 +13,17 @@ const userSlice = createSlice({
     initialState,
     reducers:{
         addUser(state,action){
-            // will recieve auth as payload
             state.id = action.payload.id;
             state.userName = action.payload.name;
             state.email = action.payload.email;
+        },
+        addTeam(state,action){
+            state.teams = [...state.teams,{
+               name: action.payload.name,
+               desc: action.payload.desc,
+               id: action.payload.id,
+               authorId: action.payload.authorId
+            }]
         }
     }
 })
