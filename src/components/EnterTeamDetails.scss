@@ -1,0 +1,37 @@
+@use "../App" as v;
+
+#enterteamdetails-box{
+    height:30rem;
+    width:30rem;
+    margin:auto;
+    margin-top:3rem;
+    color:v.$white;
+    background-color: v.$reg_green;
+    text-align: center;
+    padding:2rem;
+    border-radius:1rem;
+}
+.enterteamdetails-label{
+    margin-bottom:1rem;
+}
+.enterteamdetails-input{
+    border:none;
+    border-radius:1rem;
+    font-size:1.5rem;
+}
+#enterteamdetails-heading{
+    margin-bottom:2rem;
+}
+#enterteamdetails-proceed-button{
+    display:block;
+    border:none;
+    border-radius:1rem;
+    padding-top:0.25rem;
+    padding-bottom:0.5rem;
+    width:13rem;
+    font-size:2rem;
+    color:v.$dark_green;
+    margin:auto;
+    background-color:v.$white;
+    margin-top:3rem;
+}
