@@ -1,38 +1,74 @@
-import React,{useState} from 'react';
+import React,{useEffect, useState} from 'react';
 import CreateTeamModal from './CreateTeamModal';
 import JoinTeamModal from './JoinTeamModal';
+import {useSelector} from 'react-redux';
 import './YourTeams.scss';
+import { collection, getDocs, where,query } from 'firebase/firestore';
+import { db } from '../firebase-config';
 
 function YourTeams() {
+    const userCtx = useSelector(state=> state.user);
+    const [teams,setTeams] = useState(null);
     const [isOpenCreate, setIsOpenCreate] = useState(false);
     const [isOpenJoin, setIsOpenJoin] = useState(false);
 
-  return <div>
-      <button id="create-team-btn" onClick={()=>setIsOpenCreate(true)}>Create Team</button>
-      <button id="create-team-btn" onClick={()=>setIsOpenJoin(true)}>Join Team</button>
-        <CreateTeamModal isOpen={isOpenCreate} setIsOpen={setIsOpenCreate}/>
-        <JoinTeamModal isOpen={isOpenJoin} setIsOpen={setIsOpenJoin}/>
-      <h2 id="your-teams-heading"><u>Your teams:</u></h2>
+    useEffect(()=>{
+        const getTeams = async ()=>{
+            const userRef = collection(db,"users");
+            const q = query(userRef, where('id','==',userCtx.id));
+            const data = await getDocs(q);
+            console.log(data);
+            console.log(data.docs[0].data().teams);
+            const list =  data.docs[0].data().teams.map((team,value)=>{
+               return (
+                 <tr key={value}>
+                   <td>{value+1}</td>
+                   <td>{team.name}</td>
+                   <td>{team.authorId === userCtx.id?'Creator':"Member"}</td>
+                   <td>-</td>
+                 </tr>
+               );
+           })
+           setTeams(list);
+            
+        }
+    getTeams();
+},[])
+  return (
+    <div>
+      <button id="create-team-btn" onClick={() => setIsOpenCreate(true)}>
+        Create Team
+      </button>
+      <button id="create-team-btn" onClick={() => setIsOpenJoin(true)}>
+        Join Team
+      </button>
+      <CreateTeamModal isOpen={isOpenCreate} setIsOpen={setIsOpenCreate} />
+      <JoinTeamModal isOpen={isOpenJoin} setIsOpen={setIsOpenJoin} />
+      <h2 id="your-teams-heading">
+        <u>Your teams:</u>
+      </h2>
 
-      <div id="teams-table-container">
-          <ul className="teams-table-col">
-              <h3 className="teams-table-heading">Serial no.</h3>
-                <li className="teams-table-elements">1</li>
-          </ul>
-          <ul className="teams-table-col" id="team-name-list">
-              <h3 className="teams-table-heading">Team Name</h3>
-              <li className="teams-table-elements">Avada Kedavra</li>
-          </ul>
-          <ul className="teams-table-col" id="position-list">
-              <h3 className="teams-table-heading">Position</h3>
-              <li className="teams-table-elements">Organizer</li>
-          </ul>
-          <ul className="teams-table-col">
-              <h3 className="teams-table-heading">Open Issues</h3>
-              <li className="teams-table-elements">3</li>
-          </ul>
-      </div>
-  </div>;
+      <table id="teams">
+        <thead>
+          <tr>
+            <th>Serial</th>
+            <th>Team Name</th>
+            <th>Role</th>
+            <th>Open Issues</th>
+          </tr>
+        </thead>
+        <tbody>
+          {teams ? (
+            teams
+          ) : (
+            <tr>
+              <td colSpan={4}>No teams available!</td>
+            </tr>
+          )}
+        </tbody>
+      </table>
+    </div>
+  );
 }
 
 export default YourTeams;

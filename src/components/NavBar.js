@@ -13,6 +13,7 @@ function NavBar() {
       await signOut(auth);
       dispatch(userActions.removeUser());
       localStorage.removeItem("user");
+      window.location = '/';
   }
   return (<div className="navbar">
     <ul id="navbar-list">
