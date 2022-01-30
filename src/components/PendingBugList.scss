@@ -1,0 +1,29 @@
+@use "../App" as v;
+
+#pendingbuglist-table{
+    margin:auto;
+    color:v.$dark_green;
+
+}
+.pendingbuglist-table-heading{
+    font-size:2rem;
+    padding:1rem;
+
+}
+#pendingbuglist-table-heading-bugtitle{
+    padding-right:14rem;
+}
+#pendingbuglist-table-heading-slno{
+    padding-right:1rem;
+}
+td{
+    font-size:2rem;
+    padding-left:2rem;
+}
+.pendingbuglist-table-element-description{
+    padding-left:8rem;
+    font-weight:lighter;
+    color:v.$reg_green;
+    font-size:1.5rem;
+
+}

@@ -1,0 +1,31 @@
+@use "../App" as v;
+
+#pendingbug-redirect-box{
+    //height:30rem;
+    width:20rem;
+    background-color: v.$dark_green;
+    border-radius: 2rem;
+    float:right;
+    margin:1rem;
+    margin-right:2rem;
+
+}
+.pendingbug-redirect-button{
+    background-color: v.$reg_green;
+    font-size:1.5rem;
+    border:none;
+    border-radius:1rem;
+    color:v.$white;
+    padding:1rem 2rem 1rem 2rem;
+    margin:0.5rem 2rem 0.5rem 2rem;
+}
+#pendingbug-redirect-button-container{
+    display:flex;
+    flex-direction:column;
+}
+#pendingbug-redirect-button-first{
+    margin-top:2rem;
+}
+#pendingbug-redirect-button-third{
+    margin-bottom:2rem;
+}
