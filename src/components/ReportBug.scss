@@ -1,0 +1,46 @@
+@use "../App" as v;
+
+#centerer{
+    display:flex;
+    justify-content:center;
+}
+
+#report-bug-container{
+    background-color: v.$reg_green;
+    border-radius: 1em;
+    padding:2em;
+    margin-top:3em;
+}
+.reportbug-box-text{
+    color:v.$white;
+    font-weight: 100;
+}
+.reportbug-text-box{
+    width:20rem;
+    height:2rem;
+    font-size:1.5rem;
+    border-radius:1rem;
+    border:none;
+}
+#reportbug-description-box{
+    height:8rem;
+}
+.reportbug-checkbox{
+    margin-right:1rem;
+    color:v.$white;
+}
+#reportbug-button{
+    margin-left:43%;
+    margin-top:5em;
+
+    display:block;
+    border:none;
+    border-radius:1rem;
+    padding-top:0.25rem;
+    padding-bottom:0.5rem;
+    width:13rem;
+    font-size:2rem;
+    color:v.$white;
+    background-color: v.$dark_green;
+    margin-top:2rem;
+}
