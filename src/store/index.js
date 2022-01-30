@@ -1,9 +1,8 @@
 import {configureStore} from '@reduxjs/toolkit';
-import teamSlice from './team-context';
 import userSlice from './user-context';
 
 const store = configureStore({
-    reducer:{user: userSlice.reducer, team: teamSlice.reducer}
+    reducer:{user: userSlice.reducer}
 })
 
 export default store;

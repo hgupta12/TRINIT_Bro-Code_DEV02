@@ -14,7 +14,7 @@ function App() {
   useEffect(()=>{
     if(localStorage.getItem("user"))
       dispatch(userActions.addUser(JSON.parse(localStorage.getItem("user"))));
-  },[])
+  },[dispatch])
   return (
     <Router>
       <NavBar />
