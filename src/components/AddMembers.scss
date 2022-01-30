@@ -1,0 +1,49 @@
+@use "../App" as v;
+
+#addmembers-box{
+    height:43rem;
+    width:50rem;
+    margin:auto;
+    margin-top:3rem;
+    color:v.$white;
+    background-color: v.$reg_green;
+    text-align: center;
+    padding:2rem;
+    border-radius:1rem;
+    margin-bottom:3rem;
+}
+#addmembers-individually-heading,#addmembers-bypasscode-heading{
+    font-size:2.5rem;
+    margin-bottom:1rem;
+}
+.addmembers-label{
+    font-size: 2rem;
+}
+#addmembers-email-input{
+    border:none;
+    border-radius:1rem;
+    font-size:1.5rem;
+    margin-bottom:1rem;
+}
+.addmember-individually-button{
+    border:none;
+    border-radius:1rem;
+    padding-top:0.25rem;
+    padding-bottom:0.5rem;
+    font-size:2rem;
+    margin-top:1rem;
+    margin-right: 1rem;
+    margin-bottom:2rem;
+    width:20rem;
+    color:v.$dark_green;
+    background-color:v.$white;
+}
+#addmember-divider{
+    border:1px solid v.$dark_green;
+    margin-bottom: 2rem;
+}
+.addmembers-key{
+    background-color: v.$light_green;
+    color:v.$dark_green;
+    font-size:2rem;
+}
