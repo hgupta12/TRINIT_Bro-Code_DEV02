@@ -1,0 +1,43 @@
+@use "../App" as v;
+
+#assignbug-box{
+    background-color: v.$reg_green;
+    display: flex;
+    flex-direction: column;
+    height:30rem;
+    width:30rem;
+    margin:auto;
+    justify-content: center;
+    text-align: center;
+    margin-top:3em;
+}
+#assignbug-box-title{
+    color:v.$white;
+    font-size:3rem;
+    margin-top:-2rem;
+}
+#assignbug-box-form{
+    //padding-left:5em;
+}
+.assignbug-form-label{
+    color:v.$white;
+    font-size:2rem;
+}
+.assignbug-form-input{
+    border:none;
+    border-radius:1rem;
+    font-size:2rem;
+}
+#assignbug-form-submit{
+    display:block;
+    border:none;
+    border-radius:1rem;
+    padding-top:0.25rem;
+    padding-bottom:0.5rem;
+    width:13rem;
+    font-size:2rem;
+    color:v.$dark_green;
+    margin:auto;
+    background-color:v.$white;
+    margin-top:2rem;
+}

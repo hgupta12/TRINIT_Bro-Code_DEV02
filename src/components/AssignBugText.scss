@@ -1,0 +1,19 @@
+@use "../App" as v;
+
+#assignbug-text-container{
+    margin:3rem;
+    color:v.$dark_green;
+}
+#assignbug-heading{
+    display: inline;
+    font-size:2.5rem;
+}
+#assignbug-subheading{
+    font-size:2.5rem;
+    margin-left:1rem;
+    color:v.$reg_green;
+}
+#assignbug-description{
+    margin-top:1rem;
+    font-size:1.5rem;
+}
