@@ -1,7 +1,7 @@
 @use "../App" as v;
 
 .home-page-text{
-    color:black;
+    color:v.$dark_green;
 }
 #flex{
     display:flex;
@@ -11,5 +11,16 @@
     padding:3rem;
 }
 .flex-item{
-    padding:5rem;
+    padding:2rem;
+}
+#grasshopper-heading{
+    display:inline;
+}
+#intro{
+    background-color: v.$light_green;
+    padding:1rem;
+    border-radius:1rem;
+}
+#homepage-list{
+    list-style-type: none;
 }
