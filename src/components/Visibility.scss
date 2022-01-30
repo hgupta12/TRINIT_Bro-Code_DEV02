@@ -1,0 +1,12 @@
+@use "../App" as v;
+
+.visibility-rect{
+    height: 2.5rem;
+    width:12rem;
+    font-size:1.5rem;
+    background-color: v.$reg_green;
+    border-radius: 0.5rem;
+    margin-bottom:0.25rem;
+    text-align: center;
+    color:v.$white;
+}

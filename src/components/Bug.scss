@@ -1,0 +1,19 @@
+@use "../App" as v;
+
+#bug-box{
+    color:v.$reg_green;
+    margin:2rem;
+    margin-bottom:4rem;
+}
+#bug-discard-button{
+    float:right;
+    background-color: v.$reg_green;
+    color:v.$white;
+    border:none;
+    padding:0.75rem;
+    border-radius:1rem;
+    font-size: 1rem;
+}
+#bug-title{
+    font-weight:bold;
+}
