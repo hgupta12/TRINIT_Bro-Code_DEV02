@@ -4,11 +4,13 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { getDocs, collection, query ,where} from "firebase/firestore";
 import { useDispatch } from "react-redux";
 import { userActions } from "../store/user-context";
+import { useNavigate } from "react-router-dom";
 import "./SignInBox.scss";
 function SignUpBox() {
   const dispatch = useDispatch();
   const emailRef = useRef();
   const passwordRef = useRef();
+  const navigate = useNavigate();
 
   const addNewUser = async (e) => {
     e.preventDefault();
@@ -34,6 +36,7 @@ function SignUpBox() {
       }
       dispatch(userActions.addUser(userDetails));
       localStorage.setItem("user", JSON.stringify(userDetails));
+      navigate('/teams');
     } catch (err) {
       alert(err.message);
     }

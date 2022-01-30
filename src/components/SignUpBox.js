@@ -10,6 +10,7 @@ import {useNavigate} from 'react-router-dom';
 function SignUpBox() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  
   const emailRef = useRef();
   const passwordRef = useRef();
   const nameRef = useRef();

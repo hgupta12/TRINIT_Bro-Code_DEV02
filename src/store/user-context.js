@@ -24,6 +24,12 @@ const userSlice = createSlice({
                id: action.payload.id,
                authorId: action.payload.authorId
             }]
+        },
+        removeUser(state,action){
+            state.id = null;
+            state.userName ='';
+            state.email = '';
+            state.teams = [];
         }
     }
 })

@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { db } from '../firebase-config';
-import {collection,addDoc} from 'firebase/firestore'
+import {collection,addDoc,query,where, updateDoc,getDocs, doc} from 'firebase/firestore'
 import Modal from './Modal';
 import './CreateTeamModal.scss';
 import { useDispatch ,useSelector } from 'react-redux';
@@ -28,8 +28,29 @@ const CreateTeamModal = ({isOpen,setIsOpen}) => {
             const results = await addDoc(teamRef,{
                 name,
                 desc,
-                authorId: userCtx.id
+                authorId: userCtx.id,
+                members:[]
             });
+            const userRef = collection(db,'users');
+            const q = query(userRef, where("id", "==", userCtx.id));
+            const docSnap = await getDocs(q);
+            const docRef = doc(db,'users',docSnap.docs[0].id); 
+            if(docSnap.docs[0].data().teams)
+           { 
+               console.log('callled');
+               await updateDoc( docRef, {
+              teams: [
+                ...docSnap.docs[0].data().teams,
+                { name, desc, id: results.id, authorId: userCtx.id },
+              ],
+            });
+        }
+        else{
+            console.log('first call');
+            await updateDoc(docRef, {
+              teams: [{ name, desc, id: results.id, authorId: userCtx.id }],
+            });
+        }
             setInviteId(results.id);
             dispatch(userActions.addTeam({name,desc,id:results.id, authorId:userCtx.id}))
         }catch(err){
@@ -50,6 +71,7 @@ const CreateTeamModal = ({isOpen,setIsOpen}) => {
                     <h2>Employee Code:</h2>
                     <p>{`${inviteId}E`}</p>
                 </div>
+                <button onClick={()=>{setInviteId(null)}}>Create New Team</button>
             </Modal>
         )
     }

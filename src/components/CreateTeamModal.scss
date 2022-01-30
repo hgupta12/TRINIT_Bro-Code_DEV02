@@ -13,13 +13,25 @@
             width: 100%;
             padding: 0.2rem 0.5rem;
             border: none;
-            margin-bottom: 1rem;
         }
         textarea{
             height: 15vh;
         }
     }
+    
+}
+
+.passcode-container{
+    padding: 1rem;
+    h2{
+        color:$dark_green;
+        margin-bottom: 0.75rem;
+    }
     button{
+        margin: 1rem;
+    }
+}
+.modal button{
         width: 50%;
         padding: 0.5rem 0;
         border: none;
@@ -30,15 +42,3 @@
         cursor: pointer;
 
     }
-}
-
-.passcode-container{
-    padding: 1rem;
-    h2{
-        color:$dark_green;
-        margin-bottom: 0.75rem;
-    }
-    p{
-        
-    }
-}
