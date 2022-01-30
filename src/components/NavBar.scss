@@ -1,20 +1,30 @@
 @use "../App" as v;
 
-.NavBar{
+.navbar{
     overflow:hidden;
+    img{
+        width: 100px;
+        margin-right: 1rem;
+    }
 }
 #navbar-list {
     list-style-type: none;
     overflow: hidden;
+        padding:1rem 3rem;
+
     background-color: v.$dark_green;
+    i{
+        color: white;
+    }
 }
 .navbar-list-element {
     display:inline;
     color: v.$light_green;
     float: left;
-    font-size:3rem;
+    font-size:1.5rem;
+    margin-right: 4rem;
 }
-a {
+>a {
     display: block;
     padding: 2rem;
     padding-bottom:0.5rem;
@@ -27,24 +37,19 @@ i{
     float:right;
 }
 #user-status{
-    margin-top:-0.75rem;
+    // margin-top:2rem;
 }
 .login-btn{
-    display:block;
-    border:none;
-    border-radius:2rem;
-    padding-top:0.25rem;
-    padding-bottom:0.5rem;
-    margin: -0.2rem 0.25rem 0.40rem 0.15rem;
-    width:13rem;
-    font-size:2rem;
-    color:v.$dark_green;
+   display: block;
+   width: 8rem;
+   padding: 0.3rem 0;
+   margin-bottom: 0.5rem;
+   border-radius:30px;
+   border:none
 }
 #firstbtn{
     background-color:v.$white;
-    margin-bottom:0.75rem;
 }
 #secondbtn{
     background-color:v.$light_green;
-    margin-bottom:0.1rem;
 }
