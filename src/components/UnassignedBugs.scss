@@ -1,0 +1,14 @@
+@use "../App" as v;
+
+hr{
+    border:1px solid v.$dark_green;
+    width:70%;
+    margin:auto;
+}
+#unassignedbugs-team-title,#unassignedbugs-page-title{
+    margin:3rem;
+    color:v.$reg_green;
+}
+#unassignedbugs-team-title{
+    font-size:3rem;
+}
